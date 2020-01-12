@@ -5,30 +5,14 @@ from pyramid.paster import bootstrap, setup_logging
 from sqlalchemy.exc import OperationalError
 
 from airgql import models
-
-
-# todo - rname file to setup_aurn_sites
-
-def setup_models(dbsession):
-    """
-    Add or update models / fixtures in the database.
-
-    """
-    # model = models.order.Order(name='one', value=1)
-    # dbsession.add(model)
-    pass
+from airgql.scripts.aurn_site_data import get_site_info, site_list
 
 
 def setup_aurn_sites(dbsession):
-    """
-    Add or update models / fixtures in the database.
-
-    """
-    # model = models.order.Order(name='one', value=1)
-    # dbsession.add(model)
-    print('foobar!')
-    print('foobar!')
-    pass
+    """ Uses imported data to populate aurn_sites table """
+    for site_name in site_list:
+        aurn_site = models.AurnSite(**get_site_info(site_name))
+        dbsession.add(aurn_site)
 
 
 def parse_args(argv):

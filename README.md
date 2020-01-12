@@ -1,8 +1,14 @@
 
-Source code for a Pyramid application created for testing purposes in the development
-of separate Python packages.
+Source code for a prototype API which supports GraphQL operations as well as REST.
+It is written in Python and libraries used include Pyramid and graphene-sqlalchemy.
+Schema revolves around hourly recorded measurements taken sites 
+within an automated air pollution monitoring network.
 
-In the env.py file that get after run alembic -c development.ini init alembic, update like:
+# todo add equivalent REST endpoints
+
+
+For database setup, run alembic -c development.ini init alembic
+In the env.py file that get after , update like:
 
 # add your model's MetaData object here
 # for 'autogenerate' support

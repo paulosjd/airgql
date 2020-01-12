@@ -5,11 +5,8 @@ import zope.sqlalchemy
 
 # import or define all models here to ensure they are attached to the
 # Base.metadata prior to any initialization routines
-
-
+from .aurn_hourly import AurnHourly  # flake8: noqa
 from .aurn_site import AurnSite  # flake8: noqa
-# from .order_item import OrderItem  # flake8: noqa
-# from .product import Product  # flake8: noqa
 
 # run configure_mappers after defining all of the models to ensure
 # all relationships can be setup
