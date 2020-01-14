@@ -16,6 +16,9 @@ requires = [
     'pyramid_retry',
     'pyramid_tm',
     'psycopg2',
+    'bs4',
+    'lxml',
+    'pytz',
     'requests',
     'Celery',
     'redis',
@@ -32,7 +35,7 @@ tests_require = [
 
 setup(
     name='airgql',
-    version='1.1',
+    version='1.2',
     description='airgql',
     long_description=README,
     classifiers=[
@@ -58,6 +61,7 @@ setup(
         ],
         'console_scripts': [
             'initialize_airgql_db=airgql.scripts.initialize_db:main',
+            'aurn_hourly_create=airgql.scripts.aurn_hourly_create:main',
         ],
     },
 )
