@@ -25,6 +25,7 @@ requires = [
     'SQLAlchemy',
     'transaction',
     'zope.sqlalchemy',
+    'graphene-sqlalchemy'
 ]
 
 tests_require = [

@@ -17,3 +17,22 @@ target_metadata = Base.metadata
 
 alembic -c development.ini revision --autogenerate -m "some message"   and upgrade head
 
+Todo: - code first approach of graphene: at end draw up equivalent schema in graph
+
+Execute graphql query from pshell:
+
+>>> from airgql.schema import aurn_sites_schema
+>>> result = aurn_sites_schema.execute(
+        """
+        query {
+          sites(name: "Aberdeen") {
+            name
+            siteCode
+          }
+        }
+        """
+        , context={'session': dbsession}
+    )
+>>> result.errors
+>>> result.data
+OrderedDict([('sites', [OrderedDict([('name', 'Aberdeen'), ('siteCode', 'ABD')]), ...])]), 
