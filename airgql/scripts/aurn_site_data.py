@@ -7,12 +7,12 @@ def get_site_info(site: str) -> dict:
             'latitude': geo[0], 'longitude': geo[1]}
     environ = site_environs.get(site)
     region = regions.get(site)
-    region_enum = ''.join([s[0] for s in region.split('-')])
+    region_enum = ''.join([s[0] for s in region.split('-')]).upper()
     if region.endswith('wales'):
-        region_enum += 'a'
+        region_enum += 'A'
     info.update({
         'environ': getattr(AurnEnvironments,
-                           ''.join([s[0] for s in environ.split('-')])),
+                           ''.join([s[0] for s in environ.split('-')]).upper()),
         'region': getattr(AurnRegions, region_enum)
     })
     return info

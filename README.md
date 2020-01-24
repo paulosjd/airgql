@@ -15,7 +15,11 @@ In the env.py file that get after , update like:
 from pyratest.models.meta import Base
 target_metadata = Base.metadata
 
-alembic -c development.ini revision --autogenerate -m "some message"   and upgrade head
+Alembic database migrations: 
+
+    $ alembic -c development.ini revision --autogenerate -m "some message"   
+     
+    $ alembic -c development.ini upgrade head
 
 Todo: - code first approach of graphene: at end draw up equivalent schema in graph
 
@@ -25,9 +29,9 @@ Execute graphql query from pshell:
 >>> result = aurn_sites_schema.execute(
         """
         query {
-          sites(name: "Aberdeen") {
+          sites(region: "North East") {
             name
-            siteCode
+            region
           }
         }
         """

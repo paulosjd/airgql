@@ -5,6 +5,7 @@ from airgql.models import AurnSite, AurnHourly
 
 
 class AurnSiteType(SQLAlchemyObjectType):
+
     class Meta:
         model = AurnSite
         only_fields = (

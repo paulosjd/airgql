@@ -1,36 +1,46 @@
 import enum
+import typing
 
 from sqlalchemy import Column, Enum, Integer, Unicode
 
 from .meta import Base
 
 
-class AurnEnvironments(enum.Enum):
-    rb = 'Rural Background'
-    si = 'Suburban Industrial'
-    sb = 'Suburban Background'
-    ub = 'Urban Background'
-    ut = 'Urban Traffic'
-    ui = 'Urban Industrial'
+# TODO update all db records -- members and names to uppercase
+
+class BaseEnum(enum.Enum):
+    @classmethod
+    def get_value_from_name(cls, item) -> str:
+        """ Human-readable long name to enum name """
+        return {a.value: a.name for a in list(cls)}.get(item)
 
 
-class AurnRegions(enum.Enum):
-    cs = 'Central Scotland'
-    em = 'East Midlands'
-    e = 'Eastern'
-    gl = 'Greater London'
-    h = 'Highlands'
-    ne = 'North East'
-    nes = 'North East Scotland'
-    ni = 'Northern Ireland'
-    nwa = 'North Wales'
-    nw = 'North West'
-    sb = 'Scottish Borders'
-    se = 'South East'
-    swa = 'South Wales'
-    sw = 'South West'
-    wm = 'West Midlands'
-    y = 'Yorkshire'
+class AurnEnvironments(BaseEnum):
+    RB = 'Rural Background'
+    SI = 'Suburban Industrial'
+    SB = 'Suburban Background'
+    UB = 'Urban Background'
+    UT = 'Urban Traffic'
+    UI = 'Urban Industrial'
+
+
+class AurnRegions(BaseEnum):
+    CS = 'Central Scotland'
+    EM = 'East Midlands'
+    E = 'Eastern'
+    GL = 'Greater London'
+    H = 'Highlands'
+    NE = 'North East'
+    NES = 'North East Scotland'
+    NI = 'Northern Ireland'
+    NWA = 'North Wales'
+    NW = 'North West'
+    SB = 'Scottish Borders'
+    SE = 'South East'
+    SWA = 'South Wales'
+    SW = 'South West'
+    WM = 'West Midlands'
+    Y = 'Yorkshire'
 
 
 class AurnSite(Base):
