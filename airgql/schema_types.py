@@ -1,15 +1,31 @@
-import graphene
+from graphene.types import String
 from graphene_sqlalchemy import SQLAlchemyObjectType
 
-from airgql.models import AurnSite, AurnHourly
+from airgql.models import AurnHourly, AurnSite
+
+
+class EnumValueType(String):
+
+    @staticmethod
+    def serialize(enum):
+        return enum.value
+
+
+class AurnRegionType(String):
+
+    @staticmethod
+    def serialize(enum):
+        return enum.value
 
 
 class AurnSiteType(SQLAlchemyObjectType):
+    region = EnumValueType()
+    environ = EnumValueType()
 
     class Meta:
         model = AurnSite
         only_fields = (
-            'name', 'site_code', 'environ', 'region', 'latitude', 'longitude'
+            'name', 'site_code', 'latitude', 'longitude'
         )
 
 

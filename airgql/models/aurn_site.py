@@ -1,18 +1,20 @@
 import enum
-import typing
 
 from sqlalchemy import Column, Enum, Integer, Unicode
 
 from .meta import Base
 
 
-# TODO update all db records -- members and names to uppercase
-
 class BaseEnum(enum.Enum):
     @classmethod
-    def get_value_from_name(cls, item) -> str:
+    def get_value_from_name(cls, itm: str) -> str:
         """ Human-readable long name to enum name """
-        return {a.value: a.name for a in list(cls)}.get(item)
+        try:
+            return {
+                a.value.upper(): a.name for a in list(cls)
+                    }.get(itm.replace('-', ' ').upper())
+        except AttributeError:
+            pass
 
 
 class AurnEnvironments(BaseEnum):
@@ -54,7 +56,7 @@ class AurnSite(Base):
     longitude = Column(Unicode(50), nullable=False)
 
     @property
-    def environment_type(self):
+    def environment_type(self) -> str:
         return self.environ.value
 
     # hourly_data = db.relationship('HourlyData', backref='owner', lazy='dynamic')
