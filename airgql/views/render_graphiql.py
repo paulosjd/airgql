@@ -1,6 +1,7 @@
 import json
 from json.decoder import JSONDecodeError
 
+from pyramid.exceptions import HTTPNotFound
 from pyramid.renderers import render
 from pyramid.response import Response
 from pyramid.view import view_config
@@ -10,6 +11,8 @@ from airgql.schema import aurn_sites_schema
 
 @view_config(route_name='graphiql')
 def render_graphiql(request):
+    if request.registry.settings.get('graphiql_enabled') != 'true':
+        raise HTTPNotFound()
     try:
         result = aurn_sites_schema.execute(
                 request.json_body['query'],

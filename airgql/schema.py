@@ -37,8 +37,9 @@ class Query(graphene.ObjectType):
                 if k in ['region', 'environ']:
                     enum = AurnRegions if k == 'region' else AurnEnvironments
                     param = enum.get_value_from_name(v)
-                    if param:
-                        filter_kwargs[k] = param
+                    if not param:
+                        return []
+                    filter_kwargs[k] = param
                 else:
                     filter_kwargs[k] = v
         query = AurnSiteType.get_query(info)
