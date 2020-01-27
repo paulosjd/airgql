@@ -1,10 +1,3 @@
-<!--
-The request to this GraphQL server provided the header "Accept: text/html"
-and as a result has been presented GraphiQL - an in-browser IDE for
-exploring GraphQL.
-If you wish to receive JSON, provide the header "Accept: application/json" or
-add "&raw" to the end of the URL within a browser.
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +19,6 @@ add "&raw" to the end of the URL within a browser.
 </head>
 <body>
   <script>
-    // Collect the URL parameters
     var parameters = {};
     window.location.search.substr(1).split('&').forEach(function (entry) {
       var eq = entry.indexOf('=');
@@ -35,14 +27,12 @@ add "&raw" to the end of the URL within a browser.
           decodeURIComponent(entry.slice(eq + 1));
       }
     });
-    // Produce a Location query string from a parameter object.
     function locationQuery(params) {
       return '?' + Object.keys(params).map(function (key) {
         return encodeURIComponent(key) + '=' +
           encodeURIComponent(params[key]);
       }).join('&');
     }
-    // Derive a fetch URL from the current URL, sans the GraphQL parameters.
     var graphqlParamNames = {
       query: true,
       variables: true,
@@ -55,7 +45,6 @@ add "&raw" to the end of the URL within a browser.
       }
     }
     var fetchURL = locationQuery(otherParams);
-    // Defines a GraphQL fetcher using the fetch API.
     function graphQLFetcher(graphQLParams) {
       return fetch(fetchURL, {
         method: 'post',
@@ -75,8 +64,6 @@ add "&raw" to the end of the URL within a browser.
         }
       });
     }
-    // When the query and variables string is edited, update the URL bar so
-    // that it can be easily shared.
     function onEditQuery(newQuery) {
       parameters.query = newQuery;
       updateURL();
@@ -92,7 +79,6 @@ add "&raw" to the end of the URL within a browser.
     function updateURL() {
       history.replaceState(null, null, locationQuery(parameters));
     }
-    // Render <GraphiQL /> into the body.
     ReactDOM.render(
       React.createElement(GraphiQL, {
         fetcher: graphQLFetcher,
