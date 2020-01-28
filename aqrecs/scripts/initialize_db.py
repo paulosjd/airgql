@@ -4,8 +4,8 @@ import sys
 from pyramid.paster import bootstrap, setup_logging
 from sqlalchemy.exc import OperationalError
 
-from airgql import models
-from airgql.scripts.aurn_site_data import get_site_info, site_list
+from aqrecs import models
+from aqrecs.scripts.aurn_site_data import get_site_info, site_list
 
 
 def setup_aurn_sites(dbsession):

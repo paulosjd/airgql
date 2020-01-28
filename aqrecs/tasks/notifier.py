@@ -2,7 +2,7 @@
 #
 # import requests
 #
-# from airgql.tasks.celery_app import celery_app
+# from aqrecs.tasks.celery_app import celery_app
 #
 #
 # class NotifierTask(celery_app.Task):

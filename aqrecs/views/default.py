@@ -1,8 +1,8 @@
 from pyramid.view import view_config
 from sqlalchemy import exc
 
-from airgql import models
-from airgql.schema import aurn_sites_schema
+from aqrecs import models
+from aqrecs.schema import aurn_sites_schema
 
 template_path = '../templates/mytemplate.mako'
 

@@ -6,7 +6,7 @@ from pyramid.renderers import render
 from pyramid.response import Response
 from pyramid.view import view_config
 
-from airgql.schema import aurn_sites_schema
+from aqrecs.schema import aurn_sites_schema
 
 
 @view_config(route_name='graphiql')
@@ -22,7 +22,5 @@ def render_graphiql(request):
         return Response(render('../templates/graphiql.mako', {}, request))
 
     if result.data:
-        result = result.data
-    else:
-        result = [{'message': str(i)} for i in result.errors]
-    return Response(json.dumps(result))
+        return Response(json.dumps(result.data))
+    return Response(json.dumps([{'message': str(i)} for i in result.errors]))

@@ -6,6 +6,8 @@ within an automated air pollution monitoring network.
 
 # todo add equivalent REST endpoints
 
+Also provides an example of (implementing a graphiql browser interface in a Pyramid application.
+(Provide link), useful development feature for working with GraphQL.
 
 For database setup, run alembic -c development.ini init alembic
 In the env.py file that get after , update like:
@@ -25,7 +27,7 @@ Todo: - code first approach of graphene: at end draw up equivalent schema in gra
 
 Execute graphql query from pshell:
 
->>> from airgql.schema import aurn_sites_schema
+>>> from aqrecs.schema import aurn_sites_schema
 >>> result = aurn_sites_schema.execute(
         """
         query {

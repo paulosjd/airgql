@@ -1,7 +1,7 @@
 from graphene.types import String
 from graphene_sqlalchemy import SQLAlchemyObjectType
 
-from airgql.models import AurnHourly, AurnSite
+from aqrecs.models import AurnHourly, AurnSite
 
 
 class EnumValueType(String):

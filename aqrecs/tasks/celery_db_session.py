@@ -6,7 +6,7 @@
 # from sqlalchemy.orm import scoped_session
 # from sqlalchemy.orm import sessionmaker
 #
-# location = pkg_resources.get_distribution('airgql').location
+# location = pkg_resources.get_distribution('aqrecs').location
 # config = appconfig(f'config:{os.path.join(location, "development.ini")}',
 #                    'main')
 #

@@ -1,6 +1,6 @@
 # from celery import Celery
 #
-# from airgql import celeryconfig
+# from aqrecs import celeryconfig
 #
 # celery_app = Celery(__name__)
 #

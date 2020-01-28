@@ -1,4 +1,4 @@
-from airgql.models.aurn_site import AurnEnvironments, AurnRegions
+from aqrecs.models.aurn_site import AurnEnvironments, AurnRegions
 
 
 def get_site_info(site: str) -> dict:

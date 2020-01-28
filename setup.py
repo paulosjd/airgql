@@ -35,9 +35,9 @@ tests_require = [
 ]
 
 setup(
-    name='airgql',
-    version='1.2',
-    description='airgql',
+    name='aqrecs',
+    version='1.3',
+    description='aqrecs',
     long_description=README,
     classifiers=[
         'Programming Language :: Python',
@@ -58,11 +58,11 @@ setup(
     install_requires=requires,
     entry_points={
         'paste.app_factory': [
-            'main = airgql:main',
+            'main = aqrecs:main',
         ],
         'console_scripts': [
-            'initialize_airgql_db=airgql.scripts.initialize_db:main',
-            'aurn_hourly_create=airgql.scripts.aurn_hourly_create:main',
+            'initialize_aqrecs_db=aqrecs.scripts.initialize_db:main',
+            'aurn_hourly_create=aqrecs.scripts.aurn_hourly_create:main',
         ],
     },
 )

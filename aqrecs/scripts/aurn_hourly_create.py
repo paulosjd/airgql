@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 from pyramid.paster import bootstrap, setup_logging
 from sqlalchemy.exc import OperationalError, SQLAlchemyError
 
-from airgql.models import AurnHourly, AurnSite
-from airgql.scripts.aurn_site_data import site_list
-from airgql.scripts.initialize_db import parse_args
+from aqrecs.models import AurnHourly, AurnSite
+from aqrecs.scripts.aurn_site_data import site_list
+from aqrecs.scripts.initialize_db import parse_args
 
 log = logging.getLogger(__name__)
 

@@ -1,8 +1,8 @@
 import graphene
 from graphene import Int, Float, String
 
-from airgql.models.aurn_site import AurnEnvironments, AurnRegions
-from airgql.schema_types import AurnSiteType, AurnHourlyType
+from aqrecs.models.aurn_site import AurnEnvironments, AurnRegions
+from aqrecs.schema_types import AurnSiteType, AurnHourlyType
 
 
 class Query(graphene.ObjectType):
@@ -13,7 +13,7 @@ class Query(graphene.ObjectType):
     - and uses that to filter geographically
     """
     # hourly_data  -- ensure that ordered-by most recent
-    # (rely on id order? i.e. desc?) and limit..
+    # (rely on id order? -cannot - i.e. desc?) and limit..
 
     sites = graphene.List(
         of_type=AurnSiteType,
@@ -47,7 +47,7 @@ class Query(graphene.ObjectType):
 
 
 aurn_sites_schema = graphene.Schema(query=Query)
-# from airgql.schema import aurn_sites_schema
+# from aqrecs.schema import aurn_sites_schema
 # result = aurn_sites_schema.execute(
 #     """
 #     query {

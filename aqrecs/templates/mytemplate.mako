@@ -1,6 +1,6 @@
 <%inherit file="layout.mako"/>
 <%
-    project = 'airgql'
+    project = 'aqrecs'
 %>
 <div class="content">
   <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">Starter project</span></h1>
