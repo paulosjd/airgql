@@ -1,17 +1,15 @@
+from functools import partial
+
 import graphene
 from graphene import Int, Float, String
 
 from aqrecs.models.aurn_site import AurnEnvironments, AurnRegions
 from aqrecs.schema_types import AurnSiteType, AurnHourlyType
+from aqrecs.utils.haversine import haversine
 
 
 class Query(graphene.ObjectType):
-    """ Todo: ability to query on lat and lon - decide how
-    - Some kind of string argument e.g. '-59.2334, 0.2323' which resolver
-    - takes and uses along with another argument optional (has default)
-    - called e.g. distance from...or close n sites ... haversine stuff
-    - and uses that to filter geographically
-    """
+
     # hourly_data  -- ensure that ordered-by most recent
     # (rely on id order? -cannot - i.e. desc?) and limit..
 
@@ -23,15 +21,15 @@ class Query(graphene.ObjectType):
         environ=String(required=False),
         latitude=Float(required=False),
         longitude=Float(required=False),
-        geo_limit_by=Int(required=False),  # in resolver make default like 10-20
+        geo_limit_by=Int(required=False),
     )
 
     @staticmethod
     def resolve_sites(root, info, *args, **kwargs):
+        print('typ of root is %s' % type(root))
         filter_kwargs = {}
         geo = [kwargs.pop(k, 0) for k in ['latitude', 'longitude']]
-        if all(geo):
-            print(geo)  # works, e.g. [-40.343, 0.543]
+
         for k, v in kwargs.items():
             if k in AurnSiteType._meta.fields:
                 if k in ['region', 'environ']:
@@ -43,7 +41,13 @@ class Query(graphene.ObjectType):
                 else:
                     filter_kwargs[k] = v
         query = AurnSiteType.get_query(info)
-        return query.filter_by(**filter_kwargs).all()
+        sites = query.filter_by(**filter_kwargs).all()
+        if all(geo):
+            haver = partial(haversine, origin_lon=geo[1], origin_lat=geo[0])
+            sites = sorted(sites, key=haver)
+            if kwargs.get('geo_limit_by'):
+                sites = sites[:kwargs['geo_limit_by']]
+        return sites
 
 
 aurn_sites_schema = graphene.Schema(query=Query)

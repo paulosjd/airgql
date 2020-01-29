@@ -25,7 +25,7 @@ Alembic database migrations:
 
 Todo: - code first approach of graphene: at end draw up equivalent schema in graph
 
-Execute graphql query from pshell:
+GraphiQL browser. Alternatively, execute graphql query from pshell:
 
 >>> from aqrecs.schema import aurn_sites_schema
 >>> result = aurn_sites_schema.execute(
@@ -42,3 +42,73 @@ Execute graphql query from pshell:
 >>> result.errors
 >>> result.data
 OrderedDict([('sites', [OrderedDict([('name', 'Aberdeen'), ('siteCode', 'ABD')]), ...])]), 
+
+Example GraphQL Queries
+------------------------
+
+Query by geographical proximity:
+
+    query {
+          sites(geoLimitBy: 10, latitude: 52.46, longitude: -0.54) {
+            name
+            latitude
+            environ
+          }
+        }
+
+Response:
+
+    {
+      "sites": [
+        {
+          "name": "Sandy Roadside",
+          "latitude": "52.132417",
+          "environ": "Urban Traffic"
+        },
+        {
+          "name": "Leicester University",
+          "latitude": "52.619823",
+          "environ": "Urban Background"
+        },
+        {
+          "name": "Leicester A594 Roadside",
+          "latitude": "52.638677",
+          "environ": "Urban Traffic"
+        },
+        {
+          "name": "Cambridge Roadside",
+          "latitude": "52.202370",
+          "environ": "Urban Traffic"
+        },
+        {
+          "name": "Wicken Fen",
+          "latitude": "52.298500",
+          "environ": "Rural Background"
+        },
+        {
+          "name": "Luton A505 Roadside",
+          "latitude": "51.892293",
+          "environ": "Urban Traffic"
+        },
+        {
+          "name": "Coventry Binley Road",
+          "latitude": "52.407708",
+          "environ": "Urban Traffic"
+        },
+        {
+          "name": "Nottingham Centre",
+          "latitude": "52.954730",
+          "environ": "Urban Background"
+        },
+        {
+          "name": "Coventry Allesley",
+          "latitude": "52.411563",
+          "environ": "Urban Background"
+        },
+        {
+          "name": "Leamington Spa",
+          "latitude": "52.288810",
+          "environ": "Urban Background"
+        }
+      ]
+    }
