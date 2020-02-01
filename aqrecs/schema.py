@@ -1,15 +1,14 @@
-from datetime import datetime
 from functools import partial
+from typing import List, Optional
 
 import graphene
-from graphene import Int, Float, List, String
+from graphene import Int, Float, String
 
-from aqrecs.models.aurn_site import AurnEnvironments, AurnRegions, AurnSite
+from aqrecs.models import AurnHourly, AurnSite
+from aqrecs.models.aurn_site import AurnEnvironments, AurnRegions
 from aqrecs.schema_types import AurnSiteType, AurnHourlyType
-from aqrecs.utils.haversine import haversine
+from aqrecs.utils import get_time_filter_params, haversine
 
-
-# info.context['session'].query  <bound method <sqlalchemy.orm.se...4950C0EF0>>
 
 class Query(graphene.ObjectType):
 
@@ -28,51 +27,66 @@ class Query(graphene.ObjectType):
         of_type=AurnHourlyType,
         start_date=String(required=False),
         end_date=String(required=False),
-        # n most recent hours , effectively like limit_by
         hours=Int(required=False),
-        site_ids=List(of_type=Int, required=False),
+        site_ids=graphene.List(of_type=Int, required=False),
+        region=String(required=False),
+        environ=String(required=False),
         latitude=Float(required=False),
         longitude=Float(required=False),
         geo_limit_by=Int(required=False),
     )
 
+    # TODO  where filter_kwargs is None, so empty list, how do error message say that not match anything, GraphQLError ?
+
     @staticmethod
     def resolve_hourly_data(root, info, *args, **kwargs):
-        query = AurnHourlyType.get_query(info)
-        print(len(query.all()))
-        # query = AurnSiteType.get_query(info)
+        # sa db_session object: info.context['session']
         geo = [kwargs.pop(k, 0) for k in ['latitude', 'longitude']]
+        enum_kwargs = {k: kwargs.pop(k, 0) for k in ['region', 'environ']}
+        site_kwargs = Query.get_site_filter_kwargs_dict(
+            {k: v for k, v in enum_kwargs.items() if v}
+        )
         site_ids = kwargs.get('site_ids')
-        site_kwargs = {}  # TODO add args like region to hourlydata objtype and do for k in kwargs, if k in ['region' , etc]
-        # TODO                  site_kwargs[k] = kwargs.pop(k)
         if not site_ids:
-            sites_q = Query.get_aurn_sites(
+            sites = Query.get_aurn_sites(
                 info, site_kwargs, geo, geo_limit=kwargs.get('geo_limit_by')
             )
-            site_ids = [site.id for site in sites_q]
-            print(site_ids)
-        print(len(query.all()))
-        print(info.context['session'].query)
+            site_ids = [site.id for site in sites]
 
-        # sites =  info.someattr.dbsession.quern(AurnSite.id, AurnSite.latitude, AurnSite.longitude)
+        start_dt, end_dt = get_time_filter_params(kwargs)
+        results = AurnHourlyType.get_query(info).filter(
+            AurnHourly.time >= start_dt,
+            AurnHourly.time <= end_dt,
+            AurnHourly.site_id.in_(site_ids)
+        ).all()
+
+        return results
 
     @staticmethod
     def resolve_sites(root, info, *args, **kwargs):
-        filter_kwargs = {}
         geo = [kwargs.pop(k, 0) for k in ['latitude', 'longitude']]
+        filter_kwargs = Query.get_site_filter_kwargs_dict(kwargs)
+        if filter_kwargs is None:
+            return []
+        sites = Query.get_aurn_sites(info, filter_kwargs, geo,
+                                     geo_limit=kwargs.get('geo_limit_by'))
+        return sites
+
+    @staticmethod
+    def get_site_filter_kwargs_dict(kwargs: dict) -> Optional[dict]:
+        filter_kwargs = {}
         for k, v in kwargs.items():
+            # noinspection PyProtectedMember
             if k in AurnSiteType._meta.fields:
                 if k in ['region', 'environ']:
                     enum = AurnRegions if k == 'region' else AurnEnvironments
                     param = enum.get_value_from_name(v)
                     if not param:
-                        return []
+                        return None
                     filter_kwargs[k] = param
                 else:
                     filter_kwargs[k] = v
-        sites = Query.get_aurn_sites(info, filter_kwargs, geo,
-                                     geo_limit=kwargs.get('geo_limit_by'))
-        return sites
+        return filter_kwargs
 
     @staticmethod
     def get_aurn_sites(
@@ -80,7 +94,7 @@ class Query(graphene.ObjectType):
             filter_kwargs: dict,
             geo: list,
             geo_limit: int = None,
-    ):
+    ) -> List[AurnSite]:
         query = AurnSiteType.get_query(info)
         sites = query.filter_by(**filter_kwargs).all()
 
@@ -93,18 +107,5 @@ class Query(graphene.ObjectType):
         return sites
 
 
+# noinspection PyTypeChecker
 aurn_sites_schema = graphene.Schema(query=Query)
-# from aqrecs.schema import aurn_sites_schema
-# result = aurn_sites_schema.execute(
-#     """
-#     query {
-#       sites(region:"East Midlands", latitude: -40.343, longitude: 0.543) {
-#         name
-#         latitude
-#         environ
-#       }
-#     }
-#     """
-#     , context={'session': dbsession}  # Within pshell
-# )
-# return data pass through some func which replace e.g UT with urban traffic

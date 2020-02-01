@@ -11,13 +11,6 @@ class EnumValueType(String):
         return enum.value
 
 
-class AurnRegionType(String):
-
-    @staticmethod
-    def serialize(enum):
-        return enum.value
-
-
 class AurnSiteType(SQLAlchemyObjectType):
     region = EnumValueType()
     environ = EnumValueType()
