@@ -17,7 +17,6 @@ def haversine(site, origin_lon=None, origin_lat=None):
     else:
         lon, lat = site[:2]
     assert all([lon, lat, origin_lon, origin_lat]), 'Not all params'
-    print([type(a) for a in [lon, lat, origin_lon, origin_lat]])
 
     lon1, lat1, lon2, lat2 = map(radians, [lon, lat, origin_lon, origin_lat])
     dlon = lon2 - lon1

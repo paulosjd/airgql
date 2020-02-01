@@ -24,7 +24,6 @@ def create_hourly_records(dbsession):
     page = requests.get('https://uk-air.defra.gov.uk/latest/currentlevels',
                         headers={'User-Agent': 'Not blank'}).content
     soup = BeautifulSoup(page, 'lxml')
-
     for site_name in site_list:
         try:
             site_id = dbsession.query(AurnSite.id).filter(

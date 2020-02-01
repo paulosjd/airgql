@@ -25,7 +25,7 @@ class AurnSiteType(SQLAlchemyObjectType):
     class Meta:
         model = AurnSite
         only_fields = (
-            'name', 'site_code', 'latitude', 'longitude'
+            'id', 'name', 'site_code', 'latitude', 'longitude'
         )
 
 
