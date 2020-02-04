@@ -21,6 +21,6 @@ def render_graphiql(request):
     except (KeyError, JSONDecodeError):
         return Response(render('../templates/graphiql.mako', {}, request))
 
-    if result.data:
+    if not result.errors:
         return Response(json.dumps(result.data))
     return Response(json.dumps([{'message': str(i)} for i in result.errors]))
