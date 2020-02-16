@@ -56,7 +56,24 @@ class AurnSite(Base):
     longitude = Column(Unicode(50), nullable=False)
 
     @property
-    def environment_type(self) -> str:
+    def environ_type(self) -> str:
         return self.environ.value
+
+    @property
+    def region_type(self) -> str:
+        if self.region.name in ['CS', 'H', 'NES', 'SB']:
+            return 'Scotland'
+        if self.region.name in ['SWA', 'NWA']:
+            return 'Wales'
+        return self.region.value
+
+    def serialize(self, extras: dict = None) -> dict:
+        data = {k: getattr(self, k) for k in
+                ['id', 'name', 'site_code', 'latitude', 'longitude']}
+        if extras:
+            data.update(extras)
+        for prop in ['region', 'environ']:
+            data[prop] = getattr(self, f'{prop}_type')
+        return data
 
     # hourly_data = db.relationship('HourlyData', backref='owner', lazy='dynamic')

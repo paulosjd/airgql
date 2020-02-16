@@ -1,4 +1,5 @@
 from sqlalchemy import Column, DateTime, Integer, ForeignKey, UniqueConstraint
+
 from .meta import Base
 
 
@@ -15,3 +16,7 @@ class AurnHourly(Base):
     so2 = Column(Integer)
     pm25 = Column(Integer)
     pm10 = Column(Integer)
+
+    def __str__(self):
+        return f'<AurnHourly site_id={self.site_id} time={self.time} ' \
+            f'pm10={self.pm10}>'

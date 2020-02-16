@@ -130,5 +130,6 @@ class Query(graphene.ObjectType):
                     )
         return messages
 
+
 # noinspection PyTypeChecker
 aurn_sites_schema = graphene.Schema(query=Query)

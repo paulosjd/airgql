@@ -165,7 +165,7 @@ site_codes = {'Swansea Roadside': 'SWA1', 'Bath Roadside': 'BATH', 'London Harin
               'Hull Freetown': 'HUL2', 'Worthing A27 Roadside': 'WTHG', 'Southend-on-Sea': 'SEND',
               'Birmingham Acocks Green': 'AGRN', 'Auchencorth Moss': 'ACTH', 'Glazebury': 'GLAZ',
               'Northampton Spring Park': 'NTN4', "Belfast Stockman's Lane": 'BEL1',
-              'Sheffield Devonshire Green': 'SHDG', 'Lough Navar': 'LN', 'Chepstow A48': 'CHP',
+              'Sheffield Devonshire Green': 'SHDG', 'Chepstow A48': 'CHP',
               'Chesterfield Loundsley Green': 'CHLG', 'Rochester Stoke': 'ROCH', 'Manchester Sharston': 'MAHG',
               "Bristol St Paul's": 'BRS8', 'Plymouth Centre': 'PLYM', 'Leicester A594 Roadside': 'LEIR',
               'Dumbarton Roadside': 'DUMB', 'Charlton Mackrell': 'MACK', 'London Harrow Stanmore': 'HR3',

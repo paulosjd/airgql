@@ -46,15 +46,17 @@ def get_hourly_data(soup, site_name: str) -> Optional[dict]:
         try:
             time_str = row[6].text[:10] + ' ' + row[6].text[10:15]
         except IndexError:
-            log.debug(f'site name: {site_name} row: {row}')
+            log.debug(f'IndexError catch for site name: {site_name} row: {row}')
             return None
         try:
             dt = datetime.strptime(time_str.replace('24:00', '00:00'),
                                    '%d/%m/%Y %H:%M')
         except ValueError as e:
+            log.debug(f'ValueError catch for site name: {site_name}')
             log.debug(e)
             return None
         if not time_is_current(dt):
+            log.debug(f'not time_is_current for site name: {site_name}')
             return None
 
         aq_values = [row[n].text.replace('\xa0', ' ').split(' ')[0]
@@ -64,6 +66,7 @@ def get_hourly_data(soup, site_name: str) -> Optional[dict]:
                 aq_values[ind] = int(val)
             except ValueError:
                 if val not in ['', 'n/a', 'n/m']:
+                    log.debug(f'not in condition for site name: {site_name}')
                     log.debug(f'val is {val}')
                 aq_values[ind] = None
         hourly_data = dict(zip(['ozone', 'no2', 'so2', 'pm25', 'pm10'],
@@ -74,8 +77,6 @@ def get_hourly_data(soup, site_name: str) -> Optional[dict]:
 
 def time_is_current(record_dt):
     loc_dt = pytz.timezone('Europe/London').localize(datetime.now())
-    # if server western europe: loc_dt = loc_dt  - timedelta(hours=1)
-    # or just change timezone!
     time_str = datetime.strftime(loc_dt.replace(
         microsecond=0, second=0, minute=0), "%d/%m/%Y %H:%M")
     if record_dt.strftime('%d/%m/%Y %H:%M') == time_str:
