@@ -1,0 +1,157 @@
+N IRELAND
+'Armagh Roadside'  <circle cx="196.17" cy="618.2" r="3" fill="white" id="ARM6" class="site-mark"/>
+'Belfast Centre'  <circle cx="232.17" cy="596.58" r="3" fill="white" id="BEL2" class="site-mark"/>
+"Belfast Stockman's Lane"  <circle cx="230.17" cy="597.58" r="3" fill="white" id="BEL1" class="site-mark"/>
+'Lough Navar'   <circle cx="136.17" cy="610.2" r="3" fill="white" id="LNVR" class="site-mark" />
+'Derry Rosemount'   <circle cx="162.2" cy="564.9" r="3" fill="white" id="DERR" class="site-mark" />
+
+SCOTLAND
+'Aberdeen'   <circle cx="430.53" cy="366.2" r="3" fill="white" id="ABD" />
+'Aberdeen Union Street Roadside'    <circle cx="429.93" cy="366.1" r="3" fill="white" id="ABD7" />
+'Aberdeen Wellington Road'     <circle cx="429.13" cy="367.4" r="3" fill="white" id="ABD8" />
+'Inverness'  <circle cx="319.13" cy="337.4" r="3" fill="white" id="INV2" />
+'Fort William'  <circle cx="279.13" cy="389.4" r="3" fill="white" id="FW" />
+'Glasgow High Street'    <circle cx="318.9" cy="482.4" r="3" fill="white" id="GHSR" />
+'Glasgow Townhead'    <circle cx="318.0" cy="481.4" r="3" fill="white" id="GLKP" />
+'Edinburgh St Leonards'    <circle cx="366.9" cy="481.3" r="3" fill="white" id="ED3" />
+'Eskdalemuir'   <circle cx="366.9" cy="481.3" r="3" fill="white" id="ESK" />
+'Auchencorth Moss'   <circle cx="362.9" cy="492.3" r="3" fill="white" id="ACTH" />
+'Peebles'    <circle cx="364.1" cy="503.3" r="3" fill="white" id="PEEB" />
+'Grangemouth'    <circle cx="347.5" cy="474.0" r="3" fill="white" id="GRAN" />
+'Grangemouth Moray'     <circle cx="348.0" cy="474.4" r="3" fill="white" id="GRA2" />
+'Lerwick'     <circle cx="472.53" cy="56.2" r="3" fill="white" id="LERW" />
+
+WALES
+'Aston Hill'   <circle cx="373.8" cy="780.2" r="3" fill="white" id="AH" />
+'Cardiff Centre'   <circle cx="372.53" cy="866.2" r="3" fill="white" id="CARD" />
+'Chepstow A48'     <circle cx="391.8" cy="850.2" r="3" fill="white" id="CHP" />
+'Cwmbran'      <circle cx="382.53" cy="842.2" r="3" fill="white" id="CWMB" />
+'Newport'     <circle cx="381.8" cy="856.2" r="3" fill="white" id="NPT3" />
+'Narberth'    <circle cx="296.3" cy="836.2" r="3" fill="white" id="PEMB" />
+'Port Talbot Margam'   <circle cx="348.53" cy="856.2" r="3" fill="white" id="PT4" />
+'Swansea Roadside'    <circle cx="331.8" cy="853.2" r="3" fill="white" id="SWA1" />
+'Wrexham'    <circle cx="377.3" cy="732.2" r="3" fill="white" id="WREX" />
+
+NORTH-WEST
+'Birkenhead Borough Road'  <circle cx="385.53" cy="698.2" r="3" fill="blue" id="BBRD" />
+'Blackpool Marton':   <circle cx="386.5" cy="668.2" r="3" fill="white" id="BLC2" />
+'Bury Whitefield Roadside'   <circle cx="415.5" cy="688.2" r="3" fill="white" id="BURW" />
+'Carlisle Roadside'    <circle cx="397.3" cy="568.2" r="3" fill="white" id="CAR" />
+'Glazebury'   <circle cx="418.6" cy="701.2" r="3" fill="white" id="GLAZ" />
+'Liverpool Speke'    <circle cx="389.9" cy="703.9" r="3" fill="white" id="LVP" />
+'Manchester Piccadilly'   <circle cx="430.5" cy="699.2" r="3" fill="white" id="MAN3" />
+'Manchester Sharston'   <circle cx="430.5" cy="705.2" r="3" fill="white" id="MAHG" />
+'Preston'    <circle cx="405.5" cy="676.2" r="3" fill="white" id="PRES" />
+'Salford Eccles'   <circle cx="426.1" cy="699.2" r="3" fill="brown" id="ECCL" />
+'Shaw Crompton Way'    <circle cx="435.5" cy="695.2" r="3" fill="white" id="CW" />
+'St Helens Linkway'   <circle cx="397.5" cy="692.2" r="3" fill="white" id="SHLW" />
+'Warrington'    <circle cx="404.5" cy="698.2" r="3" fill="white" id="WAR" />
+'Widnes Milton Road'     <circle cx="397.5" cy="699.2" r="3" fill="white" id="WSMR" />
+'Wigan Centre'    <circle cx="407.5" cy="689.2" r="3" fill="white" id="WIG5" />
+'Wirral Tranmere'
+  
+NORTH-EAST
+'Blackpool Marton'    <circle cx="386.5" cy="668.2" r="3" fill="white" id="BLC2" class="site-mark" />
+'Newcastle Centre'    <circle cx="450.3" cy="565.2" r="3" fill="white" id="NEWC" />
+'Sunderland Silksworth'     <circle cx="463.6" cy="577.2" r="3" fill="white" id="SUN2" />
+'Sunderland Wessington Way'    <circle cx="463.3" cy="574.5" r="3" fill="white" id="SUNR" />
+'Middlesbrough'    <circle cx="471.6" cy="599.2" r="3" fill="white" id="MID" />
+'Stockton-on-Tees Eaglescliffe'   <circle cx="460.6" cy="606.2" r="3" fill="white" id="EAGL" />
+'High Muffles'    <circle cx="497.6" cy="633.2" r="3" fill="white" id="HM" />
+
+YORKSHIRE
+'York Bootham'    <circle cx="465.6" cy="652.2" r="3" fill="white" id="YK10" />
+'York Fishergate'    <circle cx="467.6" cy="654.2" r="3" fill="white" id="YK11" />
+'Hull Freetown'      <circle cx="519.8" cy="671.6" r="3" fill="white" id="HUL2" class="site-mark" />
+'Hull Holderness Road'    <circle cx="518.2" cy="672.2" r="3" fill="white" id="HULR" class="site-mark" />
+'Leeds Centre'   <circle cx="447.9" cy="664.2" r="3" fill="white" id="LEED" class="site-mark" />
+'Leeds Headingley Kerbside'   <circle cx="449.9" cy="665.2" r="3" fill="white" id="LED6" class="site-mark" />
+'Bradford Mayo Avenue'     <circle cx="440.9" cy="670.6" r="3" fill="white" id="BDMA" class="site-mark" />
+'Barnsley Gawber'   <circle cx="449.9" cy="696.6" r="3" fill="white" id="BAR3" class="site-mark" />
+'Doncaster A630 Cleveland Street'  <circle cx="464.9" cy="700.6" r="3" fill="white" id="DCST" class="site-mark" />
+'Scunthorpe Town'    <circle cx="487.4" cy="692.6" r="3" fill="white" id="SCN2" class="site-mark" />
+'Sheffield Barnsley Road'   <circle cx="454.9" cy="704.6" r="3" fill="white" id="SHBR" class="site-mark" />
+'Sheffield Devonshire Green'   <circle cx="453.2" cy="706.9" r="3" fill="white" id="SHDG" class="site-mark" />
+'Sheffield Tinsley'   <circle cx="455.7" cy="705.6" r="3" fill="white" id="SHE" class="site-mark" />
+
+EAST MIDLANDS
+'Burton-on-Trent Horninglow'   <circle cx="450.9" cy="754.6" r="3" fill="white" id="BRTN" class="site-mark" />
+'Chesterfield Loundsley Green'    <circle cx="456.1" cy="720.0" r="3" fill="white" id="CHLG" class="site-mark" />
+'Chesterfield Roadside'      <circle cx="456.9" cy="721.6" r="3" fill="white" id="CHS7" class="site-mark" />
+"Derby St Alkmund's Way"    <circle cx="456.9" cy="741.6" r="3" fill="white" id="DESA" class="site-mark" />  
+'Ladybower'                 <circle cx="441.7" cy="705.1" r="3" fill="white" id="LB" class="site-mark" />
+'Leicester A594 Roadside'     <circle cx="466.9" cy="767.1" r="3" fill="white" id="LEIR" class="site-mark" />
+'Leicester University'      <circle cx="467.9" cy="768.8" r="3" fill="white" id="LECU" class="site-mark" />
+'Nottingham Centre'          <circle cx="466.9" cy="739.6" r="3" fill="white" id="NOTT" class="site-mark" />
+'Nottingham Western Boulevard'   <circle cx="465.9" cy="740.6" r="3" fill="white" id="NWBV" class="site-mark" />
+  
+WEST MIDLANDS
+'Birmingham A4540 Roadside'  <circle cx="437.2" cy="780.6" r="3" fill="white" id="BIRR" class="site-mark" />
+'Birmingham Acocks Green'   <circle cx="435.9" cy="779.8" r="3" fill="white" id="AGRN" class="site-mark" />
+'Cannock A5190 Roadside'   <circle cx="430.9" cy="765.8" r="3" fill="white" id="CANK" class="site-mark" />
+'Walsall Woodlands'       <circle cx="431.9" cy="774.1" r="3" fill="white" id="WAL4" class="site-mark" />
+'Coventry Allesley'         <circle cx="452.2" cy="786.6" r="3" fill="white" id="COAL" class="site-mark" />
+'Coventry Binley Road'       <circle cx="454.9" cy="786.9" r="3" fill="white" id="COBR" class="site-mark" />
+'Leamington Spa'             <circle cx="453.2" cy="799.6" r="3" fill="white" id="LEAM" class="site-mark" />
+'Leamington Spa Rugby Road'     <circle cx="453.9" cy="798.6" r="3" fill="white" id="LEAR" class="site-mark" />
+'Leominster'                  <circle cx="397.3" cy="803.6" r="3" fill="white" id="LEOM" class="site-mark" />
+'Oldbury Birmingham Road'        <circle cx="434.2" cy="780.2" r="3" fill="white" id="BOLD" class="site-mark" />
+'Stoke-on-Trent A50 Roadside'    <circle cx="429.9" cy="737.1" r="3" fill="white" id="STKR" class="site-mark" />
+'Stoke-on-Trent Centre'        <circle cx="432.9" cy="737.9" r="3" fill="white" id="STOK" class="site-mark" />
+'Telford Hollinswood'      <circle cx="410.9" cy="767.8" r="3" fill="white" id="TELF" class="site-mark" />
+
+EASTERN
+'Cambridge Roadside'     <circle cx="540.3" cy="806.2" r="3" fill="white" id="CAM" class="site-mark" />
+'Luton A505 Roadside'      <circle cx="509.3" cy="835.2" r="3" fill="white" id="LUTR" class="site-mark" />
+'Norwich Lakenfields'    <circle cx="599.3" cy="775.2" r="3" fill="white" id="NO12" class="site-mark" />
+'Sandy Roadside'        <circle cx="520.3" cy="811.7" r="3" fill="white" id="SDY" class="site-mark" />
+'Sibton'                 <circle cx="610.3" cy="802.2" r="3" fill="white" id="SIB" class="site-mark" />
+'Southend-on-Sea'           <circle cx="573.3" cy="857.5" r="3" fill="white" id="SEND" class="site-mark" />
+'St Osyth'                   <circle cx="592.3" cy="836.2" r="3" fill="white" id="OSY" class="site-mark" />
+'Stanford-le-Hope Roadside'    <circle cx="562.8" cy="858.5" r="3" fill="white" id="HOPE" class="site-mark" />
+'Thurrock'                   <circle cx="554.8" cy="861.5" r="3" fill="white" id="THUR" class="site-mark" />
+'Wicken Fen'              <circle cx="550.3" cy="796.2" r="3" fill="white" id="WFEN" class="site-mark" />
+  
+SOUTH-EAST
+'Bournemouth'      <circle cx="439.8" cy="925.0" r="3" fill="white" id="BORN" class="site-mark"/>
+'Brighton Preston Park'    <circle cx="530.8" cy="917.0" r="3" fill="white" id="BRT3" class="site-mark"/>
+'Canterbury'   <circle cx="596.9" cy="884.2" r="3" fill="white" id="CANT" class="site-mark" />
+'Chatham Roadside'    <circle cx="566.3" cy="867.5" r="3" fill="white" id="CHAT" class="site-mark" />
+'Chilbolton Observatory'   <circle cx="465.5" cy="885.8" r="3" fill="white" id="CHBO" class="site-mark"/>
+'Christchurch Barrack Road'      <circle cx="445.8" cy="925.0" r="3" fill="white" id="CHBR" class="site-mark"/>
+'Eastbourne'      <circle cx="552.8" cy="917.5" r="3" fill="white" id="EB" class="site-mark"/>
+'Horley'   <circle cx="533.9" cy="892.2" r="3" fill="white" id="HORE" class="site-mark" />
+'Lullington Heath'    <circle cx="547.8" cy="918.0" r="3" fill="white" id="LH" class="site-mark"/>
+'Oxford Centre Roadside'    <circle cx="471.3" cy="845.0" r="3" fill="white" id="OX" class="site-mark" />
+'Oxford St Ebbes'    <circle cx="471.9" cy="846.6" r="3" fill="white" id="OX8" class="site-mark" />
+'Portsmouth'     <circle cx="483.2" cy="917.2" r="3" fill="white" id="PMTH" class="site-mark"/>
+'Reading London Road'      <circle cx="484.6" cy="866.6" r="3" fill="white" id="REA5" class="site-mark" />
+'Reading New Town'    <circle cx="485.9" cy="867.9" r="3" fill="white" id="REA1" class="site-mark" />
+'Rochester Stoke'      <circle cx="560.3" cy="871.5" r="3" fill="white" id="ROCH" class="site-mark" />
+'Southampton A33'    <circle cx="465.5" cy="909.8" r="3" fill="white" id="SA33" class="site-mark"/>
+'Southampton Centre'    <circle cx="467.5" cy="911.8" r="3" fill="white" id="SOUT" class="site-mark"/>  
+'Worthing A27 Roadside'    <circle cx="516.8" cy="916.2" r="3" fill="white" id="WTHG" class="site-mark"/>
+
+LONDON
+'Camden Kerbside'    <circle cx="530.2" cy="856.9" r="3" fill="white" id="CA1" class="site-mark" />
+'London Bexley'    <circle cx="546.6" cy="861.8" r="3" fill="white" id="BEX" class="site-mark" />
+'London Bloomsbury'     <circle cx="535.9" cy="859.9" r="3" fill="white" id="CLL2" class="site-mark" />
+'London Eltham'  <circle cx="541.0" cy="862.0" r="3" fill="white" id="LON6" class="site-mark" />
+'London Westminster'   <circle cx="534.0" cy="864.9" r="3" fill="white" id="HORS" class="site-mark" />
+'London Harlington'     <circle cx="517.0" cy="862.9" r="3" fill="white" id="HRL" class="site-mark" />
+'London Marylebone Road'    <circle cx="530.6" cy="859.9" r="3" fill="white" id="MY1" class="site-mark" />
+'London N. Kensington'    <circle cx="525.2" cy="860.9" r="3" fill="white" id="KC1" class="site-mark" />
+
+SOUTH-WEST
+
+'Barnstaple A39'   <circle cx="333.8" cy="896.2" r="3" fill="white" id="BPLE" class="site-mark" />
+'Bath Roadside'      <circle cx="409.8" cy="878.2" r="3" fill="white" id="BATH" class="site-mark" />
+'Bristol Temple Way'    <circle cx="401.8" cy="872.2" r="3" fill="white" id="BR11" class="site-mark" />
+"Bristol St Paul's"    <circle cx="400.8" cy="870.2" r="3" fill="white" id="BRS8" class="site-mark" />  
+'Charlton Mackrell'    <circle cx="395.8" cy="903.2" r="3" fill="white" id="MACK" class="site-mark" />
+'Exeter Roadside'      <circle cx="357.1" cy="923.2" r="3" fill="white" id="EX" class="site-mark" />
+'Plymouth Centre'      <circle cx="324.1" cy="947.2" r="3" fill="white" id="PLYM" class="site-mark" />
+'Plymouth Tavistock Road'    <circle cx="325.1" cy="944.2" r="3" fill="white" id="PLYR" class="site-mark" />
+'Yarner Wood'    <circle cx="346.1" cy="932.2" r="3" fill="white" id="YW" class="site-mark" />
+
+
