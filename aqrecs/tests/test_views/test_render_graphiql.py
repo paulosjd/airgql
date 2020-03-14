@@ -51,6 +51,7 @@ class RenderGraphiQLTestCase(unittest.TestCase):
         Result = namedtuple('result_obj', ['data', 'errors'])
         errors_list = ['foo', 'bar']
         schema_patch.return_value = Result({}, errors_list)
+
         output = self.view(self.request)
         self.assertEqual(
             json.dumps([{'message': str(i)} for i in errors_list]).encode(),
