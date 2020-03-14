@@ -37,9 +37,9 @@ class RenderGraphiQLTestCase(unittest.TestCase):
     def test_data_attribute_truthy_condition(self, render_patch, schema_patch):
         self.request.json_body = {'query': 'q'}
         self.request.registry.settings = {'graphiql_enabled': 'true'}
-        Result = namedtuple('result_obj', 'data')
+        Result = namedtuple('result_obj', ['data', 'errors'])
         data = {'foo': 'bar'}
-        schema_patch.return_value = Result(data)
+        schema_patch.return_value = Result(data, [])
         output = self.view(self.request)
         self.assertEqual(json.dumps(data).encode(), output.body)
 
