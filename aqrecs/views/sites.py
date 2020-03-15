@@ -19,14 +19,14 @@ def sites_view(request):
         for a in recent_aq
     }
 
-    return [
+    return {'time': t_subq.isoformat(), 'sites_data':[
         site.serialize(
             extras=site_aqs.get(site.id, {k: None for k in aq_fields})
         ) for site in sites_query.all()
-    ]
+    ]}
+
 
 """
-
 recent_aq_query = request.dbsession.query(AurnHourly).filter(AurnHourly.time == lat_time_rec.time)
 print('1')
 print(str(recent_aq_query))

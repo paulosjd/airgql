@@ -14,8 +14,6 @@ def my_view(request):
     return {'one': 'foo'}
 
 
-
-
 @view_config(route_name='index', renderer='json')
 def graph_view(req):
     print(req.params)
