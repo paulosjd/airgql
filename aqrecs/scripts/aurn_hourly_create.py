@@ -29,7 +29,7 @@ def create_hourly_records(dbsession):
             site_id = dbsession.query(AurnSite.id).filter(
                 AurnSite.name == site_name).one()[0]
         except SQLAlchemyError as e:
-            log.error(e)
+            log.error(f'Site name: {site_name} -- {e}')
             continue
 
         hourly_data = get_hourly_data(soup, site_name)

@@ -9,32 +9,40 @@ Output to a new text file is:
 <circle cx="232.17" cy="596.58" r="2" fill="white" id="BEL2" class="site-mark"/>
 <text x="232.17" y="596.58" class="site-label" >Belfast Centre</text>
 """
+import pathlib
 
-with open('labels.txt') as f:
-    circle_elems = f.readlines()
 
-output = []
-text_elems = []
-for line in circle_elems:
-    if 'circle' not in line:
-        continue
+def main():
+    path = pathlib.Path.cwd() / 'labels.txt'
+    with open(path) as f:
+        circle_elems = f.readlines()
 
-    x = line[line.find('cx="') + 1:].split()[0]
-    y = line[line.find('cy="') + 1:].split()[0]
-    elem_id = line[line.find('id="'):].split()[0]
-    elem_id = elem_id[:-1] + '_label' + '"'
-    label = line.split('<cir')[0].replace('\"', '').replace('\'', '').strip()
+    output = []
+    text_elems = []
+    for line in circle_elems:
+        if 'circle' not in line:
+            continue
 
-    elem = f'<text {x} {y} class="site-label" {elem_id}>{label}</text>\n'
-    line = '<' + line[line.find('circle'):]
-    if 'class="site-mark"' not in line:
-        line = '{}{}{}'.format(
-            line[:line.find('/>')], 'class="site-mark"', line[line.find('/>'):])
+        x = line[line.find('cx="') + 1:].split()[0]
+        y = line[line.find('cy="') + 1:].split()[0]
+        elem_id = line[line.find('id="'):].split()[0]
+        elem_id = elem_id[:-1] + '_label' + '"'
+        label = line.split('<cir')[0].replace('\"', '').replace('\'', '').strip()
 
-    text_elems.append(elem)
-    output.append(line)
+        elem = f'<text {x} {y} class="site-label" {elem_id}>{label}</text>\n'
+        line = '<' + line[line.find('circle'):]
+        if 'class="site-mark"' not in line:
+            line = '{}{}{}'.format(
+                line[:line.find('/>')], 'class="site-mark"', line[line.find('/>'):])
 
-output += text_elems
+        text_elems.append(elem)
+        output.append(line)
 
-with open('label_out.txt', 'w') as f:
-    f.writelines(output)
+    output += text_elems
+
+    with open('label_out.txt', 'w') as f:
+        f.writelines(output)
+
+
+if __name__ == '__main__':
+    main()
